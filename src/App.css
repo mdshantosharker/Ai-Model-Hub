@@ -1,2 +1,8 @@
+@import url("https://fonts.googleapis.com/css2?family=Bungee&display=swap");
 @import "tailwindcss";
 @plugin "daisyui";
+
+* {
+  font-family: "Bungee", sans-serif;
+  font-weight: 500;
+}
