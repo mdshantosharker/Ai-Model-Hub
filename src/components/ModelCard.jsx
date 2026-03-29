@@ -1,9 +1,10 @@
 import React, { useState } from "react";
 
-const ModelCard = ({ model }) => {
+const ModelCard = ({ model, carts, setCarts }) => {
   const [isSubscribe, setIsSubscribe] = useState(false);
-  const handleSubScription = () => {
+  const handleSubScription = (model) => {
     setIsSubscribe(true);
+    setCarts([...carts,model])
   };
   return (
     <div className="shadow-lg rounded-lg border overflow-hidden border-zinc-200">
@@ -17,7 +18,7 @@ const ModelCard = ({ model }) => {
         <div className="text-2xl font-bold">${model.price}/month</div>
 
         <button
-          onClick={() => handleSubScription()}
+          onClick={() => handleSubScription(model)}
           className="btn w-full bg-red-500 text-white rounded-lg mt-5"
         >
           {isSubscribe ? "Subscribe" : "Subscribe Now"}

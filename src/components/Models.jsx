@@ -1,10 +1,10 @@
-import React, { use} from "react";
+import React, { use } from "react";
 import ModelCard from "./ModelCard";
 
-const Models = ({ modelPromise }) => {
+const Models = ({ modelPromise, carts, setCarts }) => {
   const models = use(modelPromise);
-  console.log(models);
-  
+  // console.log(models);
+
   return (
     <div className="py-20 max-w-7xl mx-auto">
       <div className="text-center">
@@ -13,8 +13,8 @@ const Models = ({ modelPromise }) => {
       </div>
 
       <div className="grid  grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-5 mt-10">
-        {models.map((model) => (
-          <ModelCard model={model} />
+        {models.map((model,index) => (
+          <ModelCard carts={carts} key={index} setCarts={setCarts} model={model} />
         ))}
       </div>
     </div>
